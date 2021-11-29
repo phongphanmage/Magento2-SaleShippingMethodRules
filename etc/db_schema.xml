@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="vnecoms_shipping_order_rules" resource="default" engine="innodb" comment="Shipping Order Rules">
+        <column xsi:type="int" name="rule_id" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="text" name="description" nullable="true" comment="Description"/>
+        <column xsi:type="text" name="short_description" nullable="true" comment="Short Description"/>
+        <column xsi:type="date" name="from_date" comment="From"/>
+        <column xsi:type="date" name="to_date" comment="To"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Is Active"/>
+        <column xsi:type="mediumtext" name="conditions_serialized" nullable="true" comment="Conditions Serialized"/>
+        <column xsi:type="mediumtext" name="shipping_method" nullable="true" comment="Shipping Method"/>
+
+        <column xsi:type="int" name="sort_order" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Sort Order"/>
+
+        <column xsi:type="text" name="customer_group_id" nullable="true" comment="Customer Group ID"/>
+
+        <column xsi:type="text" name="website_id" nullable="true" comment="Website ID"/>
+
+        <column xsi:type="int" name="stop_rules_processing" unsigned="false" nullable="false"
+            identity="false" default="0" comment="Stop Rules Processing"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+        </constraint>
+        <index referenceId="ORDERRULE_IS_ACTIVE_SORT_ORDER_TO_DATE_FROM_DATE_STOP_RULES_PROCESSING" indexType="btree">
+            <column name="is_active"/>
+            <column name="sort_order"/>
+            <column name="to_date"/>
+            <column name="from_date"/>
+            <column name="stop_rules_processing"/>
+        </index>
+    </table>
+</schema>

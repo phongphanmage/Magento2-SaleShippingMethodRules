@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vnecoms_ShippingOrderRules::shipping_order_rules" title="Shipping Rules" sortOrder="998" module="Vnecoms_ShippingOrderRules" parent="Magento_Backend::marketing" action="vendors/shipping_rules"  dependsOnModule="Vnecoms_ShippingOrderRules" resource="Vnecoms_ShippingOrderRules::shipping_order_rules"/>
+    </menu>
+</config>

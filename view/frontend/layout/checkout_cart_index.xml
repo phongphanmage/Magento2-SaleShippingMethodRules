@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- File: app/code/Atwix/CatalogAttribute/view/frontend/layout/checkout_cart_index.xml -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Vnecoms_ShippingOrderRules::css/styles.css"/>
+    </head>
+    <body>
+        <referenceBlock name="additional.product.info">
+            <block class="Vnecoms\ShippingOrderRules\Block\CartItemShippingRule"
+                   name="atwix.cart.item.brand" template="Vnecoms_ShippingOrderRules::shipping_rule.phtml" before="-">
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+	<event name="dispatch_before_create_shipping_label">
+		<observer name="dispatch_before_create_shipping_label" instance="Vnecoms\ShippingOrderRules\Observer\BeforeShippingLabel" />
+	</event>
+</config>
