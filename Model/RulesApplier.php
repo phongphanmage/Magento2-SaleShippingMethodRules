@@ -32,7 +32,7 @@ class RulesApplier
     public function getShippingMethodFromQuoteItem($item, $address)
     {
         $shippingMethod = false;
-        $rules = $this->_getRules($address->getStore()->getWebsiteId(), $address->getCustomerGroupId());
+        $rules = $this->_getRules($address->getStore()->getId(), $address->getCustomerGroupId());
 
         foreach ($rules as $rule) {
             if ($rule->getConditions()->validate($item)) {
@@ -55,11 +55,12 @@ class RulesApplier
     public function getDesFromQuoteItem($item, $address)
     {
         $des = false;
-        $rules = $this->_getRules($address->getStore()->getWebsiteId(), $address->getCustomerGroupId());
+        $rules = $this->_getRules($address->getStore()->getId(), $address->getCustomerGroupId());
 
         foreach ($rules as $rule) {
             if ($rule->getConditions()->validate($item)) {
                 $des = $rule->getData('short_description');
+                break;
             }
         }
 
@@ -80,6 +81,7 @@ class RulesApplier
         foreach ($rules as $rule) {
             if ($rule->getConditions()->validate($item)) {
                 $des = $rule->getData('description');
+                break;
             }
         }
 

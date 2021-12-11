@@ -148,7 +148,7 @@
                     <link>https://docs.magento.com/m2/ce/user_guide/configuration/scope.html</link>
                     <description>What is this?</description>
                 </tooltip>
-                <label translate="true">Websites</label>
+                <label translate="true">Stores</label>
                 <dataScope>website_ids</dataScope>
             </settings>
             <formElements>

@@ -25,6 +25,6 @@ class WebsitesOptionsProvider implements \Magento\Framework\Data\OptionSourceInt
      */
     public function toOptionArray()
     {
-        return $this->store->getWebsiteValuesForForm();
+        return $this->store->getStoreValuesForForm();
     }
 }
