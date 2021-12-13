@@ -78,7 +78,7 @@ class ProductShippingRule extends ViewTemplate
             return null;
         }
 
-        $websiteId = $this->_storeManager->getStore()->getWebsiteId();
+        $websiteId = $this->_storeManager->getStore()->getId();
         $customerGroupId = $this->_customerSession->getCustomerGroupId();
 
         $string = $this->rulesApplier->getDesFromProduct($product, $websiteId, $customerGroupId);
