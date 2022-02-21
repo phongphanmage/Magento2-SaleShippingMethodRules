@@ -60,6 +60,7 @@ class Shipping
 
         $shippingRates = $resultCollect->getAllRates();
         $allShippingRates = $this->groupShippingRates($shippingRates);
+        $itemShippingMethods = [];
         foreach ($allItems as $item) {
             if ($item->getProductType() == \Magento\Catalog\Model\Product\Type::TYPE_BUNDLE
                 && $item->getProduct()->getShipmentType()
@@ -77,6 +78,7 @@ class Shipping
 
         }
 
+        if (!$itemShippingMethods) return $result;
         $intersect = $itemShippingMethods;
         if (count($itemShippingMethods) > 1) {
             $intersect = array_intersect(...$itemShippingMethods);
